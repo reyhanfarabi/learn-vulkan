@@ -157,11 +157,13 @@
   <ItemGroup>
     <ClCompile Include="first_app.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="device.cpp" />
     <ClCompile Include="pipeline.cpp" />
     <ClCompile Include="window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="first_app.h" />
+    <ClInclude Include="device.h" />
     <ClInclude Include="pipeline.h" />
     <ClInclude Include="window.h" />
   </ItemGroup>

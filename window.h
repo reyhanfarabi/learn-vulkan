@@ -17,6 +17,7 @@ namespace rfe
 		RfeWindow& operator=(const RfeWindow&) = delete;
 
 		bool shouldClose() { return glfwWindowShouldClose(window); }
+		void createWindowSurface(VkInstance instance, VkSurfaceKHR* surface);
 
 	private:
 		void initWindow();

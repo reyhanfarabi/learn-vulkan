@@ -1,4 +1,5 @@
 #include "window.h"
+#include <stdexcept>
 
 namespace rfe
 {
@@ -15,6 +16,14 @@ namespace rfe
 	{
 		glfwDestroyWindow(window);
 		glfwTerminate();
+	}
+
+	void RfeWindow::createWindowSurface(VkInstance instance, VkSurfaceKHR* surface)
+	{
+		if (glfwCreateWindowSurface(instance, window, nullptr, surface) != VK_SUCCESS)
+		{
+			throw std::runtime_error("failed to create window surface");
+		}
 	}
 
 	void RfeWindow::initWindow()
