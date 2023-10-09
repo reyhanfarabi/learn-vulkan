@@ -2,6 +2,7 @@
 
 #include "window.h"
 #include "pipeline.h"
+#include "device.h"
 
 namespace rfe
 {
@@ -16,6 +17,12 @@ namespace rfe
 
 	private:
 		RfeWindow rfeWindow{WIDTH, HEIGHT, "Vulkan Window"};
-		RfePipeline rfePipeline{ "shader/simple_shader.vert.spv", "shader/simple_shader.frag.spv" };
+		RfeDevice rfeDevice{ rfeWindow };
+		RfePipeline rfePipeline{
+			rfeDevice, 
+			"shader/simple_shader.vert.spv", 
+			"shader/simple_shader.frag.spv", 
+			RfePipeline::defaultPipelineConfigInfo(WIDTH, HEIGHT)
+		};
 	};
 }
